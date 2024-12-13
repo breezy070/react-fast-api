@@ -29,7 +29,7 @@ function App() {
 
 	useEffect(() => {
 		// Fetch the welcome message
-		fetch("http://localhost:8000")
+		fetch("http://34.163.122.24:8000")
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,7 +43,7 @@ function App() {
 			});
 
 		// Fetch the prediction
-		fetch("http://localhost:8000/predict")
+		fetch("http://34.163.122.24/predict")
 			.then((response) => {
 				console.log("resssssss",response)
 				if (!response.ok) {
@@ -70,7 +70,7 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:8000/predict", {
+		fetch("http://34.163.122.24/predict", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
