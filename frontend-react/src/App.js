@@ -43,7 +43,7 @@ function App() {
 			});
 
 		// Fetch the prediction
-		fetch("http://34.163.122.24/predict")
+		fetch("http://34.163.122.24:8000/predict")
 			.then((response) => {
 				console.log("resssssss",response)
 				if (!response.ok) {
@@ -70,7 +70,7 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://34.163.122.24/predict", {
+		fetch("http://34.163.122.24:8000/predict", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
