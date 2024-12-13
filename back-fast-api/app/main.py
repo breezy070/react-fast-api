@@ -1,7 +1,7 @@
 import joblib
 import os
 import pandas as pd
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sklearn.tree import DecisionTreeRegressor
 from pydantic import BaseModel
