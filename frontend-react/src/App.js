@@ -22,7 +22,7 @@ function App() {
 	const isDev = true
 
 	useEffect(() => {
-		fetch(isDev ? path : path2)
+		fetch("http://34.163.122.24:8000")
 			.then((response) => response.json())
 			.then((data) => setMessage(data.message));
 	}, []);
