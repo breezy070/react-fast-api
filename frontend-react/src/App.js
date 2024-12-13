@@ -17,16 +17,19 @@ function App() {
 		month: "",
 		year: ""
 	});
+	const path = "http://localhost:8000"
+	const path2 = "http://34.163.122.24:8000"
+	const isDev = true
 
 	useEffect(() => {
-		fetch("http://34.163.122.24:8000")
+		fetch(isDev ? path : path2)
 			.then((response) => response.json())
 			.then((data) => setMessage(data.message));
 	}, []);
 
 	useEffect(() => {
 		// Fetch the welcome message
-		fetch("http://34.163.122.24:8000")
+		fetch("http://localhost:8000")
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
@@ -40,7 +43,7 @@ function App() {
 			});
 
 		// Fetch the prediction
-		fetch("http://34.163.122.24:8000/predict")
+		fetch("http://localhost:8000/predict")
 			.then((response) => {
 				console.log("resssssss",response)
 				if (!response.ok) {
@@ -67,7 +70,7 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://34.163.122.24:8000/predict", {
+		fetch("http://localhost:8000/predict", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
