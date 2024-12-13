@@ -19,8 +19,6 @@ app.add_middleware(
 
 model_path = os.path.join(os.getcwd(), "decision_tree.pkl")
 
-
-
 try:
     model = joblib.load(model_path)
     print("Modèle chargé avec succès.")
