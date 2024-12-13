@@ -67,7 +67,7 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:8000/predict", {
+		fetch("http://34.163.122.24:8000/predict", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
